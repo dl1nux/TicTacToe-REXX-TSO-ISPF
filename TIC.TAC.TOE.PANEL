@@ -1,0 +1,50 @@
+)ATTR
+      *  TYPE(OUTPUT) COLOR(GREEN) CAPS(OFF)
+      $  TYPE(OUTPUT) COLOR(RED)   CAPS(OFF)
+      %  TYPE(OUTPUT) COLOR(BLUE)  CAPS(OFF)
+      ;  TYPE(INPUT)  COLOR(TURQ)
+      ^  TYPE(INPUT)  COLOR(TURQ)  CAPS(OFF)
+      §  TYPE(TEXT)   COLOR(YELLOW)
+
+)BODY
+ §=========== Tic Tac Toe ===========
+ +
+ +*ABFRAGE
+ +
+ +Spieler X: ^NAME1                 +
+ +Spieler O: ^NAME2                 +
+ +
+ +
+ +
+ +              A    B    C
+ +            ----------------
+ +          1 |*A1+|*B1+|*C1+|
+ +            ----------------
+ +          2 |*A2+|*B2+|*C2+|
+ +            ----------------
+ +          3 |*A3+|*B3+|*C3+|
+ +            ----------------
+ +
+ +
+ %CHOOSETX                            $PLAYER    ;CHOOSE+
+ +
+ %HINWEIS
+ *ENDETEXT
+
+)INIT
+ &CHOOSE=&Z
+ IF(&STATUS='GEWONNEN')
+   .ATTR(&G1)='COLOR(RED)'
+   .ATTR(&G2)='COLOR(RED)'
+   .ATTR(&G3)='COLOR(RED)'
+ IF(&STATUS='UNENTSCHIEDEN')
+   &PLAYER=&Z
+
+)REINIT
+ .ATTR(.CURSOR)='COLOR(YELLOW)'
+
+)PROC
+ IF(&ENDE^='YES')
+   VER(&CHOOSE,NB)
+
+)END
