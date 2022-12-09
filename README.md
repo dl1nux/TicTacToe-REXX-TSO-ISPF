@@ -25,4 +25,4 @@ Hinweise:
   wird es wohl sein, den Code per Copy&Paste über den 3270 Emulator zu 
   übertragen.
 
-![Screenshot](TICTACTTOE.PNG "Screenshot")
+![Screenshot](TICTACTOE.PNG "Screenshot")
